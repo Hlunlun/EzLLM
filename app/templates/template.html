@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>EvoDiff</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/template.css') }}"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/dropzone@5/dist/min/dropzone.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/dropzone@5/dist/min/dropzone.min.css"
+      type="text/css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>Conditional Generation of Sequence</h1>
+        <div id="menu">
+          <nav id="navigator">
+            <ul class="nav">
+              <li>
+                <input name="nav" type="radio" {% if current_page == 'home'
+                %}checked{% endif %}/>
+                <a href="{{ url_for('home') }}" class="smooth-transition"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <input name="nav" type="radio" {% if current_page == 'results'
+                %}checked{% endif %}/>
+                <a href="{{ url_for('results') }}" class="smooth-transition"
+                  >Results</a
+                >
+              </li>
+              <li>
+                <input name="nav" type="radio" {% if current_page == 'about'
+                %}checked{% endif %}/>
+                <a href="{{ url_for('about') }}" class="smooth-transition"
+                  >About</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <script src="{{ url_for('static', filename='js/index.js') }}"></script>
+
+    <div id="page">{% block content %} {% endblock %}</div>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+data/*
+
+src/data_preprocess/motif_msa.py
+src/data_preprocess/motif.py
+src/data_preprocess/species_fasta.py
+src/data_preprocess/species_motif_msa.py
+src/data_preprocess/species_motif.py
+
+src/training/performance/
+
+# model will be on hugging face
+src/training/models/
+
+
+secrets.ini
+
+
+# analysis of pH and temperature
+src/pH_temp/analysis/*jpg, *png, .csv

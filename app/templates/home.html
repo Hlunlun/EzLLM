@@ -1,0 +1,69 @@
+{% extends "template.html" %} {% block content %}
+<div class="home">
+  <h1>Home</h1>
+  <ol>
+    <li>
+      <strong>Upload sequence data:</strong> Ensure the file is in .fasta format
+      and contains more than three sequences.
+    </li>
+    <li>
+      <strong>Choose generation type</strong>:
+      <ul>
+        <li>
+          <strong>Conditional Generation</strong>: We will first create a
+          Multiple Sequence Alignment (MSA) for your data and then evaluate the
+          generated sequence. Note that this process requires motif information,
+          so it will take some time to scan motif positions using InterProScan.
+        </li>
+        <li>
+          <strong>Unconditional Generation</strong>: This option generates new
+          sequences using your data directly, without requiring motif
+          information.
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  <!-- input sequence -->
+  <section class="inline">
+    <section>
+      <h1>Type sequence</h1>
+      <textarea
+        name="seq_field"
+        placeholder="Please type sequence."
+      ></textarea>
+    </section>
+
+    <!-- upload file -->
+    <section>
+      <h1>Upload files</h1>
+      <form class="dropzone needsclick inline" id="upload-file" action="/post_data">
+        <div class="dz-message needsclick">
+          Drop files here or click to upload.
+        </div>
+      </form>
+      <div id="preview-template" style="display: none">
+        <div class="dz-preview dz-file-preview">
+          <div class="dz-details">
+            <div class="dz-filename"><span data-dz-name></span></div>
+            <div class="dz-size" data-dz-size></div>
+            <img data-dz-thumbnail />
+          </div>
+          <div class="dz-progress">
+            <span class="dz-upload" data-dz-uploadprogress></span>
+          </div>
+          <div class="dz-success-mark"><span>✔</span></div>
+          <div class="dz-error-mark"><span>✘</span></div>
+          <!-- <div class="dz-error-message"><span data-dz-errormessage></span></div> -->
+        </div>
+      </div>
+    </section>
+  </section>
+  <div class="submit-button">
+    <a  href="{{ url_for('results') }}">Submit</a>
+  </div>
+
+
+</div>
+
+{% endblock %}
