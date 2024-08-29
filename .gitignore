@@ -1,19 +1,27 @@
+# data for detergent-compatible enzyme
 data/*
 
+# code to run in the background
 src/data_preprocess/motif_msa.py
 src/data_preprocess/motif.py
 src/data_preprocess/species_fasta.py
 src/data_preprocess/species_motif_msa.py
 src/data_preprocess/species_motif.py
 
+# not push image in it
 src/training/performance/
 
 # model will be on hugging face
 src/training/models/
 
-
+# api token for hugging face
 secrets.ini
 
 
 # analysis of pH and temperature
 src/pH_temp/analysis/*jpg, *png, .csv
+
+
+# test for loading model 
+src/training/test.ipynb
+src/training/test.py
