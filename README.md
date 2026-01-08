@@ -260,9 +260,6 @@ python app/main.py
 ```
 Expected Output
 After executing the command, you should see output indicating that the Flask server is running, typically on http://127.0.0.1:5000/. You can access the application by entering this URL in your web browser.
-<div style="text-align: center;">
-    <img src="img\app.png" alt="alt text" width="400" />
-</div>
 
 #### 2. Front-end Development
 The front-end of this application is built using JavaScript, which is responsible for controlling the user interface and handling user interactions.
